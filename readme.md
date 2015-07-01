@@ -5,7 +5,7 @@ QML Application Template
 
 A CMake project template for a simple QML desktop application. This project should give a brief overview and orientation and also provide a robust starting point for applications based on Qt QML.
 
-**Currently only configured for Mac OS X and Xcode**
+**Currently only configured for Mac OS X**
 
 What you get
 ---
@@ -17,13 +17,12 @@ What you get
 
 What you need
 ---
-- [Xcode](https://developer.apple.com/xcode/downloads/) (I'm working on that...)
 - [CMake](http://www.cmake.org/)
 - [Qt 5.4](https://www.qt.io/download-open-source/)
 
 How to set it up
 ---
-Follow [these](doc/setup.md) steps to set up the project for Xcode on Mac OS X via CMake.
+Follow [these](doc/setup.md) steps to set up the project for Mac OS X via CMake.
 
 Project structure
 ---

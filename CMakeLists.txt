@@ -9,10 +9,6 @@ if(NOT APPLE)
 	message(FATAL_ERROR "Currently configured for Mac OS X only")
 endif()
 
-if(NOT ${CMAKE_GENERATOR} MATCHES "Xcode")
-	message(FATAL_ERROR "Currently configured for XCode only")
-endif()
-
 # definitions & compiler flags
 # ******************************************************************************************************************************************************************
 option(USE_CPP11 "Use C++ 11" ON)

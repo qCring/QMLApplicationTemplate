@@ -3,7 +3,7 @@ QML Application Template - Setup
 
 ###1. Downlaod and install prerequisites
 
-- Download and install [Qt5](https://www.qt.io/download-open-source/)
+- Download and install [Qt 5.4](https://www.qt.io/download-open-source/)
 - Downlaod and install [CMake](http://www.cmake.org/download/)
 
 ###2. Configure using CMake GUI
@@ -12,7 +12,7 @@ QML Application Template - Setup
 
 	![](img/img1.png)
 
-- Select Xcode
+- Select Xcode or Unix Makefile
 
 	![](img/img2.png)
 
@@ -40,7 +40,9 @@ QML Application Template - Setup
 
 - Press *Generate*
 
-###3. Build and run
+###3. Build and run 
+
+###3.1 Using Xcode
 
 - Open the generated .xcodeproj file with Xcode
 
@@ -51,3 +53,14 @@ QML Application Template - Setup
 - Run the app
 
 	![](img/img8.png)
+	
+####3.2 Using Unix Makefile
+
+ - Open terminal
+ - Navigate to the project bin directory and use the following commands
+ 
+  		make clean
+ 		make
+ 		make install
+ 		open BaseApp.app
+ 
