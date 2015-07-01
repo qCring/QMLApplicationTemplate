@@ -1,0 +1,7 @@
+bin/
+build/
+install/
+doc/doxygen/output/
+.idea
+*.pyc
+*.DS_Store
