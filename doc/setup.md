@@ -3,7 +3,7 @@ QML Application Template - Setup
 
 ###1. Downlaod and install prerequisites
 
-- Download and install [Qt 5.4](https://www.qt.io/download-open-source/)
+- Download and install [Qt 5.5](https://www.qt.io/download-open-source/)
 - Downlaod and install [CMake](http://www.cmake.org/download/)
 
 ###2. Configure using CMake GUI
@@ -29,6 +29,8 @@ QML Application Template - Setup
 - Set the path to **Qt5_DIR** (.../Qt/Qt5.4/clang_64_lib/cmake/Qt5):
 
 	![](img/img5.png)
+	
+	Note that you have to use desktop builds when setting the Qt5 directory. Qt Libraries for Android and iOS are currently not working for this template.
 	
 - Press *Configure*
 	

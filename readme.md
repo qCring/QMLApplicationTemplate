@@ -18,7 +18,7 @@ What you get
 What you need
 ---
 - [CMake](http://www.cmake.org/)
-- [Qt 5.4](https://www.qt.io/download-open-source/)
+- [Qt 5.5](https://www.qt.io/download-open-source/)
 
 How to set it up
 ---
@@ -43,15 +43,15 @@ Notes
 ---
 - All folders in the *res* directory are copied into the application bundle. You should only edit resources (like .qml files and assets for example) here instead of the resources inside *build* or *install* folders. 
 
-- When adding new resource types, the CMakeLists.txt has to be updated to take care of other folders or file types (as of now, only *.js*, *.json*, *.ttf*, *.png* and *.qml* files are considered as can be seen in the AddRes function inside **cmake/Functions.cmake**).
+- As of now, only *.js*, *.json*, *.ttf*, *.png* and *.qml* files are considered as resources. Resource-types can be defined in the AddRes function inside **cmake/Functions.cmake**).
 
 - The application name and version are defined in CMake (see **cmake/info.in.cpp**).
 
 - The Qt version can also be defined in CMake via the **TEMPLATE_QT_VERSION** variable to easily switch between different Qt versions installed on the system.
 
-- When adding new source directories inside *src*, the CMakeLists.txt has to be updated. See the *AddSrc* function used in CMakeLists.txt.
+- When adding new source directories inside *src*, the CMakeLists.txt has to be edited. See the *AddSrc* function used in CMakeLists.txt.
 
-- For installation, switch to the *install* target
+- For installation, switch to the *install* target.
 
 
 Next steps
