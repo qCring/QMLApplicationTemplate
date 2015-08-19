@@ -98,7 +98,7 @@ add_executable(${TEMPLATE_NAME} MACOSX_BUNDLE ${list_app_src} ${MACOSX_BUNDLE_IC
 # qt
 # ******************************************************************************************************************************************************************
 if(TEMPLATE_USE_QT)
-	set(TEMPLATE_QT_VERSION "5.4.0" CACHE STRING "Qt version")
+	set(TEMPLATE_QT_VERSION "5.5.0" CACHE STRING "Qt version")
 	find_package(Qt5 ${TEMPLATE_QT_VERSION} CONFIG REQUIRED Core Gui Widgets Quick Qml Concurrent)
 	add_definitions(${QT_DEFINITIONS})
 	target_link_libraries(${TEMPLATE_NAME} Qt5::Core Qt5::Widgets Qt5::Gui Qt5::Quick Qt5::Qml Qt5::Concurrent)
@@ -111,12 +111,19 @@ if(TEMPLATE_USE_QT)
 	set(QT_DIR_QML ${Q_DIR_INSTALL}/qml)
 	set(INSTALL_QML_DIR ${INSTALL_DIR}/${EXECUTABLE}/Contents/MacOS)
 
+	message(STATUS "> qt dir bin: " ${QT_DIR_BIN})
+	message(STATUS "> qt dir qml: " ${QT_DIR_QML})
+
 	message(STATUS "> install qml libs: ${QT_DIR_QML} => ${INSTALL_QML_DIR}")
 endif()
 
-# install
+# configure
 # ******************************************************************************************************************************************************************
 configure_file(${ROOT_DIR}/cmake/PostInstall.in.cmake ${BINARY_DIR}/PostInstall.cmake)
+configure_file(${ROOT_DIR}/cmake/info.plist.in ${BINARY_DIR}/info.plist)
+
+# install
+# ******************************************************************************************************************************************************************
 install(TARGETS ${TEMPLATE_NAME} BUNDLE DESTINATION . COMPONENT Runtime RUNTIME DESTINATION bin COMPONENT Runtime)
 install(FILES ${MACOSX_BUNDLE_ICON} DESTINATION "${INSTALL_DIR}/${EXECUTABLE}/Contents/Resources")
 
@@ -128,3 +135,6 @@ endif()
 # ******************************************************************************************************************************************************************
 add_custom_command(TARGET ${TEMPLATE_NAME} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory "${ROOT_DIR}/res" ${BUILD_DIR}/${EXECUTABLE}/Contents/Resources)
 
+# custom info.plist
+# ******************************************************************************************************************************************************************
+set_target_properties(${TEMPLATE_NAME} PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${BINARY_DIR}/info.plist)
