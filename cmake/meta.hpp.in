@@ -1,0 +1,9 @@
+#pragma once
+
+struct Meta
+{
+    static constexpr auto appName       = "@PROJECT_NAME@";
+    static constexpr auto orgName       = "@TEMPLATE_ORG_NAME@";
+    static constexpr auto orgDomain     = "@TEMPLATE_ORG_DOMAIN@";
+    static constexpr auto versionString = "@TEMPLATE_VERSION_MAJOR@.@TEMPLATE_VERSION_MINOR@.@TEMPLATE_VERSION_PATCH@";
+};

@@ -1,21 +1,12 @@
-import QtQuick 2.4
+import QtQuick 2.6
 
-Text
-{
-	id: label;
+Text {
+    color: enabled ? "#9DA5B4" : "#6E7582"
 
-	FontLoader  { id: loader; source: "../../font/roboto/Roboto-Regular.ttf"; }
-	FontLoader  { source: "../../font/roboto/Roboto-Thin.ttf"; }
-	FontLoader  { source: "../../font/roboto/Roboto-Light.ttf"; }
-	FontLoader  { source: "../../font/roboto/Roboto-Medium.ttf"; }
-	FontLoader  { source: "../../font/roboto/Roboto-Bold.ttf"; }
-	FontLoader  { source: "../../font/roboto/Roboto-Black.ttf"; }
+    font.family: "Roboto"
+    font.pointSize: 13;
 
-	elide: 					Text.ElideRight;
-	textFormat: 			Text.PlainText;
-	style: 					Text.Normal;
-	color: 					"#44333333"
-	font.family: 			loader.name;
-	font.pixelSize:			12;
-	verticalAlignment: 		Text.AlignVCenter;
+    elide: Text.ElideRight;
+    textFormat: Text.PlainText;
+    horizontalAlignment : Text.AlignLeft;
 }

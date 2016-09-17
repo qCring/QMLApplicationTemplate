@@ -1,6 +1,7 @@
-#include "App.h"
+#include <stdlib.h>
 
-int main(int argc, char *argv[])
-{
-    return App::Execute(argc, argv);
+#include "appInstance.hpp"
+
+auto main(int argc, char *argv[]) -> int {
+    return app::Instance::Execute(argc, argv);
 }

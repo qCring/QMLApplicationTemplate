@@ -1,75 +1,32 @@
-QML Application Template
+QMLApplicationTemplate
 ===
 
-![](doc/img/logo.png)
+**[CMake](https://cmake.org)** project template for a simple **[QML](http://doc.qt.io/qt-5/qtqml-index.html)** desktop application.
 
-A CMake project template for a simple QML desktop application. This project should give a brief overview and orientation and also provide a robust starting point for applications based on Qt QML.
+## Building
+1. Download and launch the installer from the **[Qt download section](https://www.qt.io/download/)** to install the Qt binaries.
+2. Launch **[CMake](https://cmake.org)** and set the paths to **src** and **bin**
+3. Press **configure** and set the path to Qt
+4. Press **configure** and **generate**
 
-**Currently only configured for Mac OS X**
+**Note:** Make sure to set the environment in the IDE. Add the path to **[Qt](http://www.qt.io)** to the *Environment* field located in the project properties view under *Debugging*:
 
-What you get
----
-- Basic setup for a working app using [QtQuick/QML](http://doc.qt.io/qt-5/qmlapplications.html) technology
-- Easy project generation using [CMake](http://www.cmake.org/)
-- An Install target that generates a deployable .app for Mac OS X
-- Built-in support for [FontAwesome](http://fortawesome.github.io/Font-Awesome/)
-- Basically, a good starting point to check out QML
-
-What you need
----
-- [CMake](http://www.cmake.org/)
-- [Qt 5.5](https://www.qt.io/download-open-source/)
-
-How to set it up
----
-Follow [these](doc/setup.md) steps to set up the project for Mac OS X via CMake.
-
-Project structure
----
-- root
-	- build *(generated, store application builds)*
-	- install *(generated, store ready-to-deploy application builds)*
-	- cmake *(cmake related stuff)*
-	- doc
-	- res
-		- asset
-		- font
-		- icons
-		- qml
-	- src
-		- app
-
-Notes
----
-- All folders in the *res* directory are copied into the application bundle. You should only edit resources (like .qml files and assets for example) here instead of the resources inside *build* or *install* folders. 
-
-- As of now, only *.js*, *.json*, *.ttf*, *.png* and *.qml* files are considered as resources. Resource-types can be defined in the AddRes function inside **cmake/Functions.cmake**).
-
-- The application name and version are defined in CMake (see **cmake/info.in.cpp**).
-
-- The Qt version can also be defined in CMake via the **TEMPLATE_QT_VERSION** variable to easily switch between different Qt versions installed on the system.
-
-- When adding new source directories inside *src*, the CMakeLists.txt has to be edited. See the *AddSrc* function used in CMakeLists.txt.
-
-- For installation, switch to the *install* target.
+**PATH=**\<path-to-qt-dlls\>**;%PATH%;**
 
 
-Next steps
----
-- Fix CMake for other platforms and generators
-- Setup for installation on different platforms (CPack etc.)
-- Integrate libs for for:
-	- Testing
-	- Logging
-- Make the app a little bit more comprehensive
-- Include iOS and Android toolchains
+## License
+![License](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)
 
-These steps aim towards creating a fully equipped project template for a cross-platform application that can be used as a basis for creating UI applications using QML.
+Copyright (c) 2015, Alexander Eduard Szalo
+All rights reserved.
 
-License
--------------
-This project is under the [MIT License](http://opensource.org/licenses/MIT)
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
-Copyright (C) 2015 A. E. Szalo
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 

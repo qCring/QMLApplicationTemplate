@@ -1,4 +1,4 @@
-var Icon = {
+var Types = {
     fa_adjust : "\uf042",
     fa_adn : "\uf170",
     fa_align_center : "\uf037",

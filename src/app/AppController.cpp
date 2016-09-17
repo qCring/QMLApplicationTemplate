@@ -1,23 +1,30 @@
-#include "AppController.h"
-#include "AppConfig.h"
+#include "appController.hpp"
+#include "meta.hpp"
 
-namespace App
-{
+namespace app {
+
     Controller* Controller::instance = nullptr;
-    
-    Controller* Controller::Create()
-    {
+
+    Controller::Controller() {
+        if (instance) {
+            throw std::runtime_error("instance already existing");
+        }
+    }
+
+    auto Controller::Create() -> Controller* {
         instance = new Controller();
-        
         return instance;
     }
-    
-    void Controller::init()
-    {
+
+    auto Controller::getVersion() -> QString {
+        return Meta::versionString;
     }
-    
-    Config* Controller::getConfig()
-    {
-        return Config::instance;
+
+    auto Controller::isDebugBuild() -> bool {
+#ifdef NDEBUG
+        return false;
+#else
+        return true;
+#endif
     }
 }

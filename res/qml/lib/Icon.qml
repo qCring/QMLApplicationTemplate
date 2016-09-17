@@ -1,26 +1,19 @@
-import QtQuick 2.4
-import "Icons.js" as Icons
-import "./" as Lib
+import QtQuick 2.6
 
-Text
-{
+import "icons.js" as Icons
+
+Text {
     id: root;
 
-    property string type: "-";
-    property var types: Icons.Icon;
-    property int pixelSize: 14;
+    property var types: Icons.Types;
+    property alias type: root.text;
+    property alias pointSize: root.font.pointSize;
 
-    FontLoader 
-    {
-        id: fontLoader;
-        source: "../../font/font-awesome/fontawesome-webfont.ttf";
-    }
-
-    textFormat:             Text.PlainText;
-    style:                  Text.Normal;
-    color:                  "#fff"
-    font.family:            fontLoader.name;
-    verticalAlignment:      Text.AlignVCenter;
-    text:                   root.type;
-    font.pixelSize:         root.pixelSize;
+    font.family: "FontAwesome";
+    font.pointSize: 13;
+    style: Text.Normal;
+    color: enabled ? "#9DA5B4" : "#6E7582"
+    textFormat: Text.PlainText;
+    verticalAlignment: Text.AlignVCenter;
+    text: type;
 }
