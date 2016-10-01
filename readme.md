@@ -3,6 +3,13 @@ QMLApplicationTemplate
 
 **[CMake](https://cmake.org)** project template for a simple **[QML](http://doc.qt.io/qt-5/qtqml-index.html)** desktop application.
 
+<center>
+	<img src="doc/screenshot.png" />
+</center>
+
+## About
+A small template to get started with **[QML](http://doc.qt.io/qt-5/qtqml-index.html)**. You've got out-of-the-box support for some basic things like custom font handling, support for **[FontAwesome](http://fontawesome.io)** and a minimal setup regarding **[CMake](https://cmake.org)** and a basic application controller. Use **[CMake](https://cmake.org)** to quickly set up relevant project properties (they're all prefixed with **TEMPLATE_**) like application name, organization, domain, project version etc.
+
 ## Building
 1. Download and launch the installer from the **[Qt download section](https://www.qt.io/download/)** and install the Qt binaries
 2. Launch **[CMake](https://cmake.org)** and set the paths to **src** and **bin**
@@ -12,7 +19,6 @@ QMLApplicationTemplate
 **Note:** When working with Visual Studio, make sure to set the environment in the IDE. Add the path to **[Qt](http://www.qt.io)** to the *Environment* field located in the project properties view under *Debugging*:
 
 **PATH=**\<path-to-qt-dlls\>**;%PATH%;**
-
 
 ## License
 ![License](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)
