@@ -5,9 +5,12 @@ cmake_minimum_required(VERSION 3.0)
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${CMAKE_CURRENT_SOURCE_DIR}/cmake;")
 include(Functions)
 
-set(PROJECT_NAME "App" CACHE STRING "Application name")
+set(TEMPLATE_APPLICATION_NAME "App" CACHE STRING "Application name")
+set(PROJECT_NAME ${TEMPLATE_APPLICATION_NAME})
 
 project(${PROJECT_NAME})
+
+set(TEMPLATE_USE_CPP11 ON CACHE BOOL "Use C++11")
 
 # project directories
 # ******************************************************************************
@@ -32,17 +35,16 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${BUILD_DIR})
 
 # meta
 # ******************************************************************************
-set(TEMPLATE_BUNDLE_VERSION_MAJOR 1)
-set(TEMPLATE_VERSION_MINOR 0)
-set(TEMPLATE_VERSION_PATCH 0)
-set(TEMPLATE_ORG_NAME name)
-set(TEMPLATE_ORG_DOMAIN domain)
+set(TEMPLATE_VERSION_MAJOR 1 CACHE INT "Version Major")
+set(TEMPLATE_VERSION_MINOR 0 CACHE INT "Version Minor")
+set(TEMPLATE_VERSION_PATCH 0 CACHE INT "Version Patch")
+set(TEMPLATE_ORGANIZATION "organization" CACHE STRING "Organization")
+set(TEMPLATE_DOMAIN "domain" CACHE STRING "Domain")
 
 # Qt
 # ******************************************************************************
 set(TEMPLATE_QT_VERSION "5.7.0" CACHE STRING "Qt Version")
 set(TEMPLATE_QT_MODULES Core Gui Widgets Quick Qml Concurrent Network DBus PrintSupport)
-set(QUICKVTK_INTERNAL_LIBRARY_TARGETS)
 
 find_package(Qt5 ${TEMPLATE_QT_VERSION} EXACT CONFIG REQUIRED ${TEMPLATE_QT_MODULES})
 set(CMAKE_AUTOMOC true)
@@ -96,15 +98,17 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${BINARY_DIR})
 
 # c++11
 # ******************************************************************************
-if(${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION} GREATER 3.0)
-    set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 11)
-    set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
-else()
-    if(APPLE)
-        list(APPEND CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -stdlib=libc++")
-    endif()
-    if(UNIX AND NOT APPLE)
-        list(APPEND CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+if(${TEMPLATE_USE_CPP11})
+    if(${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION} GREATER 3.0)
+        set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 11)
+        set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
+    else()
+        if(APPLE)
+            list(APPEND CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -stdlib=libc++")
+        endif()
+        if(UNIX AND NOT APPLE)
+            list(APPEND CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+        endif()
     endif()
 endif()
 

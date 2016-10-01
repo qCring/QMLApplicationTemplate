@@ -11,6 +11,7 @@ Rectangle {
         anchors.centerIn: parent;
 
         Lib.Icon {
+            anchors.horizontalCenter: parent.horizontalCenter;
             type: types.fa_compass;
             pointSize: 80;
         }
@@ -18,7 +19,13 @@ Rectangle {
         Lib.Label {
             font.pointSize: 24;
             anchors.horizontalCenter: parent.horizontalCenter;
-            text: "App"
+            text: Qt.application.name + " " + Qt.application.version
+        }
+
+        Lib.Label {
+            font.pointSize: 12;
+            anchors.horizontalCenter: parent.horizontalCenter;
+            text: Qt.application.organization + " " + Qt.application.domain
         }
     }
 }

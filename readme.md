@@ -4,12 +4,12 @@ QMLApplicationTemplate
 **[CMake](https://cmake.org)** project template for a simple **[QML](http://doc.qt.io/qt-5/qtqml-index.html)** desktop application.
 
 ## Building
-1. Download and launch the installer from the **[Qt download section](https://www.qt.io/download/)** to install the Qt binaries.
+1. Download and launch the installer from the **[Qt download section](https://www.qt.io/download/)** and install the Qt binaries
 2. Launch **[CMake](https://cmake.org)** and set the paths to **src** and **bin**
-3. Press **configure** and set the path to Qt
+3. Press **configure** and set the path to Qt (`../lib/cmake/Qt5/`)
 4. Press **configure** and **generate**
 
-**Note:** Make sure to set the environment in the IDE. Add the path to **[Qt](http://www.qt.io)** to the *Environment* field located in the project properties view under *Debugging*:
+**Note:** When working with Visual Studio, make sure to set the environment in the IDE. Add the path to **[Qt](http://www.qt.io)** to the *Environment* field located in the project properties view under *Debugging*:
 
 **PATH=**\<path-to-qt-dlls\>**;%PATH%;**
 
