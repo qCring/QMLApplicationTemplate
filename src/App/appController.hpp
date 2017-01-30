@@ -4,16 +4,16 @@
 
 namespace app {
 
+    class Info;
+
     class Controller : public QObject {
         Q_OBJECT
-        Q_PROPERTY(bool debugBuild READ isDebugBuild CONSTANT);
-        Q_PROPERTY(QString version READ getVersion CONSTANT);
+        Q_PROPERTY(app::Info* info READ getInfo CONSTANT);
     private:
         Controller();
     public:
         static Controller* instance;
         static auto Create() -> Controller*;
-        auto getVersion() -> QString;
-        auto isDebugBuild() -> bool;
+        auto getInfo() -> Info*;
     };
 }

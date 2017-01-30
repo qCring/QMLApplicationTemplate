@@ -19,13 +19,13 @@ Rectangle {
         Lib.Label {
             font.pointSize: 24;
             anchors.horizontalCenter: parent.horizontalCenter;
-            text: Qt.application.name + " " + Qt.application.version
+            text: Qt.application.name + " " + App.info.version;
         }
 
         Lib.Label {
             font.pointSize: 12;
             anchors.horizontalCenter: parent.horizontalCenter;
-            text: Qt.application.organization + " " + Qt.application.domain
+            text: Qt.application.organization + " " + App.info.version;
         }
     }
 }

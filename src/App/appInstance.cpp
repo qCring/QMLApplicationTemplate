@@ -1,6 +1,7 @@
 #include "appInstance.hpp"
 
 #include "meta.hpp"
+#include "appQmlRegister.hpp"
 #include "appController.hpp"
 
 #include <QFontDatabase>
@@ -36,6 +37,8 @@ namespace app {
         this->m_view = new QQuickView();
         this->m_view->setTitle(QGuiApplication::applicationName());
 
+        Qml::Register::Init();
+        
         auto engine = this->m_view->engine();
         auto context = engine->rootContext();
 

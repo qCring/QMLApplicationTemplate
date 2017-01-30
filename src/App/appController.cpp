@@ -1,4 +1,5 @@
 #include "appController.hpp"
+#include "appInfo.hpp"
 #include "meta.hpp"
 
 namespace app {
@@ -13,18 +14,11 @@ namespace app {
 
     auto Controller::Create() -> Controller* {
         instance = new Controller();
+        Info::Create();
         return instance;
     }
 
-    auto Controller::getVersion() -> QString {
-        return Meta::versionString;
-    }
-
-    auto Controller::isDebugBuild() -> bool {
-#ifdef NDEBUG
-        return false;
-#else
-        return true;
-#endif
+    auto Controller::getInfo() -> Info* {
+        return Info::instance;
     }
 }
