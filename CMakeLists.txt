@@ -43,7 +43,7 @@ set(TEMPLATE_DOMAIN "domain" CACHE STRING "Domain")
 
 # Qt
 # ******************************************************************************
-set(TEMPLATE_QT_VERSION "5.7.0" CACHE STRING "Qt Version")
+set(TEMPLATE_QT_VERSION "5.9.1" CACHE STRING "Qt Version")
 set(TEMPLATE_QT_MODULES Core Gui Widgets Quick Qml Concurrent Network DBus PrintSupport)
 
 find_package(Qt5 ${TEMPLATE_QT_VERSION} EXACT CONFIG REQUIRED ${TEMPLATE_QT_MODULES})

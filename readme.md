@@ -1,6 +1,8 @@
 QMLApplicationTemplate
 ===
 
+![Qt](https://img.shields.io/badge/Qt-5.9.1-green.svg)
+
 **[CMake](https://cmake.org)** project template for a simple **[QML](http://doc.qt.io/qt-5/qtqml-index.html)** desktop application.
 
 <center>
